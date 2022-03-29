@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import axiosWithAuth from "../axios";
 
 const loginURL = "http://localhost:9000/api/login";
 
