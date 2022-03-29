@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../axios";
 
-const friendsURL = "http://localhost:9000/api/friends";
+export const friendsURL = "http://localhost:9000/api/friends";
 
 const FriendList = () => {
   const [friends, setFriends] = useState([]);
