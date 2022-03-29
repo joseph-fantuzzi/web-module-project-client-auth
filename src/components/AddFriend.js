@@ -43,15 +43,27 @@ const AddFriend = () => {
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input id="name" name="name" type="text" onChange={changeHandler} />
+          <input
+            id="name"
+            name="name"
+            type="text"
+            value={friendForm.name}
+            onChange={changeHandler}
+          />
         </div>
         <div>
           <label htmlFor="age">Age:</label>
-          <input id="age" name="age" type="text" onChange={changeHandler} />
+          <input id="age" name="age" type="text" value={friendForm.age} onChange={changeHandler} />
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <input id="email" name="email" type="email" onChange={changeHandler} />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            value={friendForm.email}
+            onChange={changeHandler}
+          />
         </div>
         <button>Submit</button>
       </form>

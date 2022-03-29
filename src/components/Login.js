@@ -11,6 +11,7 @@ const initialLoginForm = {
 
 const Login = () => {
   const [loginForm, setLoginForm] = useState(initialLoginForm);
+  const [loginMessage, setLoginMessage] = useState("");
   const { push } = useHistory();
 
   const changeHandler = (e) => {
@@ -23,6 +24,7 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoginForm(initialLoginForm);
     axios
       .post(loginURL, loginForm)
       .then((res) => {
@@ -30,7 +32,7 @@ const Login = () => {
         push("/friends");
       })
       .catch((err) => {
-        console.error(err);
+        setLoginMessage(err.response.data.error);
       });
   };
 
@@ -40,14 +42,27 @@ const Login = () => {
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="username">Username:</label>
-          <input id="username" name="username" type="text" onChange={changeHandler} />
+          <input
+            id="username"
+            name="username"
+            type="text"
+            value={loginForm.username}
+            onChange={changeHandler}
+          />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input id="password" name="password" type="password" onChange={changeHandler} />
+          <input
+            id="password"
+            name="password"
+            type="password"
+            value={loginForm.password}
+            onChange={changeHandler}
+          />
         </div>
         <button>Submit</button>
       </form>
+      <p className="error-msg">{loginMessage}</p>
     </div>
   );
 };

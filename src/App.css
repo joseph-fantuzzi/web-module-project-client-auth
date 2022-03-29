@@ -40,6 +40,10 @@
   margin: 2em;
 }
 
+.error-msg {
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, NavLink, Switch, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import FriendList from "./components/FriendList";
 import AddFriend from "./components/AddFriend";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -24,15 +25,9 @@ function App() {
           Logout
         </NavLink>
         <Switch>
-          <Route path="/friends/add">
-            <AddFriend />
-          </Route>
-          <Route path="/friends">
-            <FriendList />
-          </Route>
-          <Route path="/logout">
-            <Logout />
-          </Route>
+          <PrivateRoute path="/friends/add" component={AddFriend} />
+          <PrivateRoute path="/friends" component={FriendList} />
+          <PrivateRoute path="/logout" component={Logout} />
           <Route path="/login">
             <Redirect to="/" />
           </Route>
