@@ -1,3 +1,7 @@
+body {
+  background-color: #b0c6c2;
+}
+
 .App {
   text-align: center;
 }
@@ -29,7 +33,34 @@
 }
 
 .links {
-  padding: 1em;
+  margin: 1em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.links:hover {
+  background-color: #406e65;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #406e65;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 30px;
+  margin: 1em;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .friend-list {

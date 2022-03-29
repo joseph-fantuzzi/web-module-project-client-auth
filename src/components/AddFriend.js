@@ -65,7 +65,7 @@ const AddFriend = () => {
             onChange={changeHandler}
           />
         </div>
-        <button>Submit</button>
+        <button className="btn">Submit</button>
       </form>
     </div>
   );

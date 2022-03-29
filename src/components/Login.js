@@ -60,7 +60,7 @@ const Login = () => {
             onChange={changeHandler}
           />
         </div>
-        <button>Submit</button>
+        <button className="btn">Submit</button>
       </form>
       <p className="error-msg">{loginMessage}</p>
     </div>
