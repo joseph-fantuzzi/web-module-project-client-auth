@@ -36,6 +36,10 @@
   list-style-type: none;
 }
 
+.btn-container {
+  margin: 2em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
